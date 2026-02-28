@@ -7,7 +7,6 @@ public class Mage implements Hero {
 
     public Mage(String name) {
         this.name = name;
-        // TODO: tune stats if needed
         this.power = 25;
         this.health = 80;
     }
@@ -16,27 +15,27 @@ public class Mage implements Hero {
     public String getName() {
         return name;
     }
-
     @Override
     public int getPower() {
         return power;
     }
-
     @Override
     public void receiveDamage(int amount) {
-        // TODO: enforce min 0
-        health -= amount;
-        if (health < 0) {
-            health = 0;
+        if (amount < 0){
+            throw new IllegalArgumentException("Amount cannot be hegative");
         }
+        health = Math.max(0, health-amount);
     }
-
     @Override
     public boolean isAlive() {
         return health > 0;
     }
-
     public int getHealth() {
         return health;
     }
+    @Override
+    public String toString(){
+        return "Mage{" + "name=' " + name + '\'' + "power=" + power + ", health=" + health + '}';
+    }
 }
+
