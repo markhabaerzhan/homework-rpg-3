@@ -10,32 +10,30 @@ public class BasicEnemy implements Enemy {
         this.damage = damage;
         this.health = health;
     }
-
     @Override
     public String getTitle() {
         return title;
     }
-
     @Override
     public int getDamage() {
         return damage;
     }
-
     @Override
     public void applyDamage(int amount) {
-        // TODO: enforce min 0
-        health -= amount;
-        if (health < 0) {
-            health = 0;
+        if (amount < 0){
+            throw new IllegalArgumentException("Amount cannot be hegative");
         }
+        health = Math.max(0, health-amount);
     }
-
     @Override
     public boolean isDefeated() {
         return health <= 0;
     }
-
     public int getHealth() {
         return health;
+    }
+    @Override
+    public String toString(){
+        return "Enemy{" + "title=' " + title + '\'' + "damage=" + damage + ", health=" + health + '}';
     }
 }
