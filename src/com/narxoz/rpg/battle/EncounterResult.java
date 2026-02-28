@@ -12,24 +12,23 @@ public class EncounterResult {
     public void setWinner(String winner) {
         this.winner = winner;
     }
-
     public void setRounds(int rounds) {
         this.rounds = rounds;
     }
-
     public void addLog(String line) {
         battleLog.add(line);
     }
-
     public String getWinner() {
         return winner;
     }
-
     public int getRounds() {
         return rounds;
     }
-
     public List<String> getBattleLog() {
         return Collections.unmodifiableList(battleLog);
+    }
+    @Override
+    public String toString() {
+        return "Winner: " + winner + ", Rounds: " + rounds;
     }
 }
