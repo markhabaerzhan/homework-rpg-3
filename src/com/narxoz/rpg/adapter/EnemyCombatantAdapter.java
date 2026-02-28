@@ -9,23 +9,18 @@ public class EnemyCombatantAdapter implements Combatant {
     public EnemyCombatantAdapter(Enemy enemy) {
         this.enemy = enemy;
     }
-
     @Override
     public String getName() {
         return enemy.getTitle();
     }
-
     @Override
     public int getAttackPower() {
-        // TODO: translate enemy damage to combat attack
         return enemy.getDamage();
     }
-
     @Override
     public void takeDamage(int amount) {
         enemy.applyDamage(amount);
     }
-
     @Override
     public boolean isAlive() {
         return !enemy.isDefeated();
