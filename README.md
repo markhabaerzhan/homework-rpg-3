@@ -54,6 +54,15 @@ homework_rpg_3/
 ├── STUDENT_CHECKLIST.md
 └── README.md
 ```
+### Singleton
+![Singleton](diagrams/SingletonDiagram.png)
+
+### Adapter
+![Adapter](diagrams/AdapterDiagram.png)
+
+## Ссылка на код 
+https://github.com/markhabaerzhan/homework-rpg-3.git
+
 
 ## Deliverables
 - Completed Java code
